@@ -1,4 +1,9 @@
-
+-- Credits:
+--[[
+	Gelatek - Everything
+	Emper - Optimization Tips
+	Syndi/Mizt - Hat Renamer (to be changed with own one later)
+]]
 local Game = game
 local RunService = Game:GetService("RunService")
 local StartGui = Game:GetService("StarterGui")
@@ -26,20 +31,20 @@ local Type = type
 
 local Global = (getgenv and getgenv()) or shared
 
-if not Global.TekasHubConfig then Global.TekasHubConfig = {} end
-local PermanentDeath = Global.TekasHubConfig["Permanent Death"]  or false
-local CollideFling = Global.TekasHubConfig["Torso Fling"]  or false
-local BulletEnabled = Global.TekasHubConfig["Bullet Enabled"] or false
-local KeepHairWelds = Global.TekasHubConfig["Keep Hats On Head"] or false
-local HeadlessPerma = Global.TekasHubConfig["Headless On Perma"] or false
-local Collisions = Global.TekasHubConfig["Enable Collisions"] or false
-local AntiVoid = Global.TekasHubConfig["Anti Void"] or false
+if not Global.GelatekHubConfig then Global.GelatekHubConfig = {} end
+local PermanentDeath = Global.GelatekHubConfig["Permanent Death"]  or false
+local CollideFling = Global.GelatekHubConfig["Torso Fling"]  or false
+local BulletEnabled = Global.GelatekHubConfig["Bullet Enabled"] or false
+local KeepHairWelds = Global.GelatekHubConfig["Keep Hats On Head"] or false
+local HeadlessPerma = Global.GelatekHubConfig["Headless On Perma"] or false
+local Collisions = Global.GelatekHubConfig["Enable Collisions"] or false
+local AntiVoid = Global.GelatekHubConfig["Anti Void"] or false
 if CollideFling and BulletEnabled then CollideFling = false end
 if not Global.TableOfEvents then Global.TableOfEvents = {} end
 
 local Player = Players.LocalPlayer
 local Character = Player.Character
-if Character.Name == "TekasReanimate" then Error("Reanimation Already Working") end
+if Character.Name == "GelatekReanimate" then Error("Reanimation Already Working") end
 if (not Character:FindFirstChildOfClass("Humanoid")) or Character:FindFirstChildOfClass("Humanoid").Health == 0 then Error("Player Is Dead.") end
 
 local PlayerDied = false
@@ -550,4 +555,4 @@ ResetEvent = Character:GetPropertyChangedSignal("Parent"):Connect(function(Paren
 end)
 
 Warn("Reanimated in " .. string.sub(tostring(tick()-Speed),1,string.find(tostring(tick()-Speed),".")+5))
-loadstring(game:HttpGet("https://raw.githubusercontent.com/paravid/TekasHub/refs/heads/main/Animation"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Gelatekussy/GelatekReanimate/main/Addons/Animations.lua"))()
